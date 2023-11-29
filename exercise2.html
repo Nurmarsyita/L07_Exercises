@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+
+<style>
+    .new {
+        border: 2px solid lightgray;
+        background: lightgoldenrodyellow;
+        padding: 20px;
+        width: 25%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+
+
+<body>
+    <form id="myForm">
+        <!-- Two text fields - Name and Email -->
+        <input id="name" type="text" placeholder="Name" value=""><br><br>
+        <input id="email" type="email" placeholder="Email" value=""><br><br>
+        <!-- Two radio buttons for Gender - Male and Female -->
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+        <!-- Submit button -->
+        <button type="button">Submit</button>
+    </form>
+
+    <!-- Display form data -->
+    <p id="data">Display Data</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // JavaScript to get and display form data
+
+        $(document).ready(function () {
+            $("[type='button']").click(function () {
+                $("#data").html(
+                    "You entered: <br><br>" + $("#name").val() + "<br>" +
+                    $("#email").val()
+                    + "<br>" + $(":checked").val()).hide().fadeIn(2000).addClass("new");
+            });
+            $("#data").mouseover(function () {
+                $(this).slideUp(1000);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
